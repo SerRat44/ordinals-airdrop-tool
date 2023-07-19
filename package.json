@@ -4,11 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && echo.> out/.nojekyll",
     "start": "next start",
     "lint": "next lint",
-    "export": "next build && next export",
-    "deploy": "gh-pages -d out"
+    "deploy": "npm run build && gh-pages -d out --dotfiles"
   },
   "dependencies": {
     "autoprefixer": "10.4.14",
@@ -21,6 +20,7 @@
     "tailwindcss": "3.3.3"
   },
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "gh-pages": "^5.0.0"
   }
 }
